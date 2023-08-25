@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="drone urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0566165526932497 0.362827202800852 0.372963661860392"
+        rpy="0 0 0" />
+      <mass
+        value="0.601501977585299" />
+      <inertia
+        ixx="0.000893814432137599"
+        ixy="-1.82004975099665E-05"
+        ixz="6.02443495163783E-14"
+        iyy="0.00356260118010316"
+        iyz="2.4430883433056E-14"
+        izz="0.00433582983289768" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.138110798961277 0.0449170250732925 0.0902882138505776"
+        rpy="0 0 0" />
+      <mass
+        value="0.382962983992538" />
+      <inertia
+        ixx="0.000921584564095325"
+        ixy="2.55344851119309E-07"
+        ixz="0.000191473487846726"
+        iyy="0.000678807828022771"
+        iyz="-3.88146636084725E-07"
+        izz="0.000753948000373125" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone urdf/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone urdf/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tilt rotor 1"
+    type="revolute">
+    <origin
+      xyz="0.19118 -0.42186 0.52772"
+      rpy="-3.1416 0.99209 3.1343" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="1 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link 2">
+    <inertial>
+      <origin
+        xyz="8.57637470763617E-09 0.00282882310838067 0.244999987310878"
+        rpy="0 0 0" />
+      <mass
+        value="0.382963384521045" />
+      <inertia
+        ixx="0.00062874218074212"
+        ixy="-7.69921417151555E-11"
+        ixz="1.57694358018648E-07"
+        iyy="0.0006788159677586"
+        iyz="-1.1969360944294E-11"
+        izz="0.0010467816691335" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone urdf/meshes/link 2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone urdf/meshes/link 2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tilt rotor 2"
+    type="revolute">
+    <origin
+      xyz="-0.078455 -0.37411 0.60911"
+      rpy="3.1416 0 0.011407" />
+    <parent
+      link="base_link" />
+    <child
+      link="link 2" />
+    <axis
+      xyz="1 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
